@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import Link from '@material-ui/core/Link'
 import { useNavigate } from "react-router-dom";
 import axios from "../../utils/axios";
+import authService from '../../services/authService'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,19 +53,25 @@ function Copyright() {
 function SignIn() {
     const classes = useStyles();
     const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     async function handleSignIn() {
 
-        const response = await axios.post('api/home/login');
+        try {
+            await authService.signIn('vinihbieel49@gmail.com', 'admin2');
+            //200
+            navigate('/');
+        } catch (error) {
+            console.log(error.response);
+        }
         
-        console.log(response)
-
         
     }
     return (
 
         <Grid container className={classes.root}>
-            <Grid item container direction="column" justify="center" alignItems="center" md={7} className={classes.image}>
+            <Grid item container direction="column" justifyContent="center" alignItems="center" md={7} className={classes.image}>
                 <Typography style={{ color: '#fff', fontSize: 35, lineHeight: '45px' }}>
                     <strong> Simplificando a forma de conectar desenvolvedores de software!</strong>
                 </Typography>
@@ -81,11 +88,9 @@ function SignIn() {
                         Acesso
                     </Typography>
                     <form className={classes.form}>
-                        <TextField variant="outlined" margin="normal" required fullWidth id="email" label="E-mail" name="email" autoComplete="email" autoFocus
-                        />
+                        <TextField variant="outlined" margin="normal" required fullWidth id="email" label="E-mail" name="email" autoComplete="email" autoFocus value={email} onChange={(event) => setEmail(event.target.value)} />
 
-                        <TextField variant="outlined" margin="normal" required fullWidth name="password" label="Senha" type="password" id="password" autoComplete="current-password"
-                        />
+                        <TextField variant="outlined" margin="normal" required fullWidth name="password" label="Senha" type="password" id="password" autoComplete="current-password" value={password} />
                         <Button fullWidth variant="contained" color="primary" className={classes.button} onClick={handleSignIn}>
                             Entrar
                         </Button>
