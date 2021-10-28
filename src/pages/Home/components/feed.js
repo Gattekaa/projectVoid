@@ -24,6 +24,21 @@ const posts = [
         description: "Teste",
         hashtags: "#nikitaolsen",
         image: "/images/posts/post_1.png"
+    },
+    {
+
+        id: 2,
+        author: {
+            id: 2,
+            name: 'Vinicius Gabriel',
+            username: 'vinihbieel',
+            avatar: '/images/avatar/avatar_1.jpg'
+        },
+        title: "Segundo Post",
+        date: "October 28, 2121",
+        description: "Teste",
+        hashtags: "",
+        image: "/images/posts/post_2.png"
     }
 ];
 

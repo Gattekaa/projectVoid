@@ -6,6 +6,8 @@ import SignIn from './pages/SignIn';
 import theme from './theme'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import './mock';
+
 function App() {
 
   return (

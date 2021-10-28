@@ -33,7 +33,7 @@ function NavBar() {
 
     return (
         <Paper className={classes.root}>
-            <Button className={classes.button} variant="outlined" color="secondary">Registrar Grátis</Button>
+            <Button className={classes.button} variant="outlined" color="secondary" href="http://localhost:3000/sign-in">Registre-se</Button>
             <ListSubheader>{`Tags em alta`}</ListSubheader>
             {
                 tags.map((item) =>(
