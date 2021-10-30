@@ -10,7 +10,7 @@ No diretório do projeto execute o comando
 
 E abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
 
-A pagina era atualizar caso faça atualizações
+A pagina era atualizar caso faça alterações.
 
 ### Preview
 
