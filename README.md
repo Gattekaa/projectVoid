@@ -14,5 +14,5 @@ A pagina era atualizar caso faça atualizações
 
 ### Preview
 
-<img align="center" alt="html5" src="https://imgur.com/4WVxo42"/>
+<img align="center" alt="html5" src="https://cdn.discordapp.com/attachments/773787772167127071/904077561724805170/preview1.png"/>
 
