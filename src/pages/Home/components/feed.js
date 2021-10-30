@@ -22,8 +22,8 @@ const posts = [
         title: "Primeiro Post",
         date: "October 27, 2121",
         description: "Teste",
-        hashtags: "#nikitaolsen",
-        image: "/images/posts/post_1.png"
+        hashtags: "#vaporwave",
+        image: "/images/posts/post_1.jpg"
     },
     {
 
@@ -36,9 +36,9 @@ const posts = [
         },
         title: "Segundo Post",
         date: "October 28, 2121",
-        description: "Teste",
+        description: "#retrowave",
         hashtags: "",
-        image: "/images/posts/post_2.png"
+        image: "/images/posts/post_2.jpg"
     }
 ];
 

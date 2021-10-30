@@ -12,6 +12,7 @@ const userStyles = makeStyles({
         padding: 16,
         width: 275,
         marginRight: 16,
+        height: 315
     },
     button: {
         width: '100%',
@@ -23,6 +24,7 @@ const tags = [
     { id: 2, name: 'ariaolsen'},
     { id: 3, name: 'courtneyolsen'},
     { id: 4, name: 'lorenaolsen'},
+    
 ]
 
 

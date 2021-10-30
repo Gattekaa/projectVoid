@@ -1,6 +1,4 @@
 import React from 'react';
-
-//import './style.css';
 import { makeStyles } from '@material-ui/styles';
 
 import Header from './components/Header';

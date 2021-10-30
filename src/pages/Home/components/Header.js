@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-//import '../style.css'
 import { makeStyles } from '@material-ui/styles';
 import { AppBar } from '@material-ui/core';
 import { Toolbar } from '@material-ui/core';
