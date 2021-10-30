@@ -7,6 +7,7 @@ import { Toolbar } from '@material-ui/core';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { Bell } from 'react-feather';
 import { Avatar } from '@material-ui/core';
+import authService from '../../../services/authService';
 
 const useStyles = makeStyles({
   appBar: {
@@ -33,6 +34,7 @@ const useStyles = makeStyles({
 
 function Header() {
   const classes = useStyles();
+  const user = authService.getUser();
 
   return (
     <AppBar position="fixed" color="inherit" className={classes.appBar}>
@@ -44,7 +46,7 @@ function Header() {
         <SvgIcon className={classes.bell}>
           <Bell></Bell>
         </SvgIcon>
-        <Avatar alt="Remy Sharp" src="" />
+        <Avatar alt="Remy Sharp" src={user && user.avatar} />
         </div>
         {/* <div>
           <a href='/'>Project Void</a>
