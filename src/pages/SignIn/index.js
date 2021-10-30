@@ -11,6 +11,7 @@ import Link from '@material-ui/core/Link'
 import { useNavigate } from "react-router-dom";
 import axios from "../../utils/axios";
 import authService from '../../services/authService'
+import { FormHelperText } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         marginTop: theme.spacing(1)
+        
     },
     form: {
         margin: theme.spacing(2, 4)
@@ -55,15 +57,16 @@ function SignIn() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState();
 
     async function handleSignIn() {
 
         try {
-            await authService.signIn('vinihbieel49@gmail.com', 'admin2');
+            await authService.signIn(email, password);
             //200
             navigate('/');
         } catch (error) {
-            console.log(error.response);
+            setErrorMessage(error.response.data.message);
         }
         
         
@@ -90,10 +93,16 @@ function SignIn() {
                     <form className={classes.form}>
                         <TextField variant="outlined" margin="normal" required fullWidth id="email" label="E-mail" name="email" autoComplete="email" autoFocus value={email} onChange={(event) => setEmail(event.target.value)} />
 
-                        <TextField variant="outlined" margin="normal" required fullWidth name="password" label="Senha" type="password" id="password" autoComplete="current-password" value={password} />
+                        <TextField variant="outlined" margin="normal" required fullWidth name="password" label="Senha" type="password" id="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
                         <Button fullWidth variant="contained" color="primary" className={classes.button} onClick={handleSignIn}>
                             Entrar
                         </Button>
+                        {
+                            errorMessage &&
+                            <FormHelperText error>
+                                {errorMessage}
+                            </FormHelperText>
+                        }
                         <Grid container>
                             <Grid item>
                                 <Link>Esqueceu sua senha?</Link>
